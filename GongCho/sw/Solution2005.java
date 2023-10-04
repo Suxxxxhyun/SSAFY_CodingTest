@@ -1,4 +1,4 @@
-package saffy.sw;
+package saffy.GongCho.sw;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package saffy.bj;
+package saffy.GongCho.bj;
 
 import java.io.*;
 import java.util.StringTokenizer;

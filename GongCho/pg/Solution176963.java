@@ -1,4 +1,4 @@
-package saffy.pg;
+package saffy.GongCho.pg;
 
 import java.util.HashMap;
 import java.util.Map;

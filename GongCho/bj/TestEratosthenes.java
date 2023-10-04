@@ -1,4 +1,4 @@
-package saffy.bj;
+package saffy.GongCho.bj;
 
 import java.util.Arrays;
 import java.util.Scanner;
