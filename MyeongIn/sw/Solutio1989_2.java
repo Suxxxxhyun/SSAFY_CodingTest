@@ -1,3 +1,4 @@
+
 // SWEA 1989. 초심자의 회문 검사
 
 // "level" 과 같이 거꾸로 읽어도 제대로 읽은 것과 같은 문장이나 낱말을 회문(回文, palindrome)이라 한다.
@@ -18,23 +19,23 @@
 
 import java.io.*;
 
-//class Solution {
-//    public static void main(String args[]) throws Exception {
-//
-//        int T;
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//
-//        T = Integer.parseInt(br.readLine());
-//
-//        for (int test_case = 1; test_case <= T; test_case++) {
-//            String str = new String(br.readLine());
-//            StringBuffer strB = new StringBuffer(str);
-//
-//            if (strB.reverse().toString().equals(str))
-//                System.out.println("#" + test_case + " " + 1);
-//            else
-//                System.out.println("#" + test_case + " " + 0);
-//
-//        }
-//    }
-//}
+class Solutio1989_2 {
+    public static void main(String args[]) throws Exception {
+
+        int T;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        T = Integer.parseInt(br.readLine());
+
+        for (int test_case = 1; test_case <= T; test_case++) {
+            String str = new String(br.readLine());
+            StringBuffer strB = new StringBuffer(str);
+
+            if (strB.reverse().toString().equals(str))
+                System.out.println("#" + test_case + " " + 1);
+            else
+                System.out.println("#" + test_case + " " + 0);
+
+        }
+    }
+}

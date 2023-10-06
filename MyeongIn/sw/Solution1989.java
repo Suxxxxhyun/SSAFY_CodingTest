@@ -18,29 +18,29 @@
 
 import java.io.*;
 
-//class Solution {
-//    public static void main(String args[]) throws Exception {
-//
-//        int T;
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//
-//        T = Integer.parseInt(br.readLine());
-//
-//        for (int test_case = 1; test_case <= T; test_case++) {
-//            String str = new String(br.readLine());
-//
-//            boolean same = true;
-//
-//            for (int i = 0; i < str.length(); i++) {
-//                if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
-//                    same = false;
-//                }
-//            }
-//            if (same)
-//                System.out.println("#" + test_case + " " + 1);
-//            else
-//                System.out.println("#" + test_case + " " + 0);
-//
-//        }
-//    }
-//}
+class Solution1989 {
+    public static void main(String args[]) throws Exception {
+
+        int T;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        T = Integer.parseInt(br.readLine());
+
+        for (int test_case = 1; test_case <= T; test_case++) {
+            String str = new String(br.readLine());
+
+            boolean same = true;
+
+            for (int i = 0; i < str.length(); i++) {
+                if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                    same = false;
+                }
+            }
+            if (same)
+                System.out.println("#" + test_case + " " + 1);
+            else
+                System.out.println("#" + test_case + " " + 0);
+
+        }
+    }
+}
