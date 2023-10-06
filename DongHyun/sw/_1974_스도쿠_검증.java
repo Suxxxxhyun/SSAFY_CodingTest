@@ -9,8 +9,9 @@ package saffy.DongHyun.sw;
 // 3. 1/3 을 한 분할부분이 문제가 없는지 탐색한다.
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.IOException;
+
 import java.util.StringTokenizer;
 
 public class _1974_스도쿠_검증 {
@@ -40,7 +41,7 @@ public class _1974_스도쿠_검증 {
 
             // 행 체크
             for(int i=0; i<N; i++){
-                if(!checkRow(arr[i])){
+                if(!check(arr[i])){
                     check = false;
                 }
                 visited = new boolean[N+1];
@@ -54,7 +55,7 @@ public class _1974_스도쿠_검증 {
                 for(int j=0; j<N; j++) {
                     colArr[j] = arr[j][i];
                 }
-                if(!checkCol(colArr)){
+                if(!check(colArr)){
                     check = false;
                 }
                 visited = new boolean[N+1];
@@ -87,7 +88,7 @@ public class _1974_스도쿠_검증 {
 //                    }
 //                    System.out.println();
                     row = (row + 3) % 9;
-                    if(!checkBox(boxArr)){
+                    if(!check(boxArr)){
                         check = false;
                     }
                     visited = new boolean[N+1];
@@ -105,31 +106,7 @@ public class _1974_스도쿠_검증 {
             System.out.println();
         }
     }
-    static boolean checkRow(int[] num){
-        for(int x : num){
-            if(!visited[x]){
-                visited[x] = true;
-            }
-            else{
-                return false;
-            }
-        }
-        return true;
-    }
-
-    static boolean checkCol(int[] num){
-        for(int x : num){
-            if(!visited[x]){
-                visited[x] = true;
-            }
-            else{
-                return false;
-            }
-        }
-        return true;
-    }
-
-    static boolean checkBox(int[] num){
+    static boolean check(int[] num){
         for(int x : num){
             if(!visited[x]){
                 visited[x] = true;
