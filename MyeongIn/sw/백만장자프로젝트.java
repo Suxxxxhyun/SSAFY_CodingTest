@@ -23,35 +23,35 @@ import java.io.*;
 import java.io.FileInputStream;
 import java.util.StringTokenizer;
 
-class Solution {
-    public static void main(String args[]) throws Exception {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        int T;
-        T = Integer.parseInt(br.readLine());
-
-        for (int test_case = 1; test_case <= T; test_case++) {
-            int n = Integer.parseInt(br.readLine());
-            int[] arr = new int[n];
-            long score = 0;
-            StringTokenizer str = new StringTokenizer(br.readLine());
-
-            for (int i = 0; i < n; i++) {
-                arr[i] = Integer.parseInt(str.nextToken());
-            }
-            int maxPrice = 0;
-            for (int j = n - 1; j >= 0; j--) {
-                if (arr[j] > maxPrice)
-                    maxPrice = arr[j];
-                score += maxPrice - arr[j];
-            }
-
-            bw.write("#" + test_case + " " + score + "\n");
-            bw.flush();
-        }
-        br.close();
-
-    }
-}
+//class Solution {
+//    public static void main(String args[]) throws Exception {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        int T;
+//        T = Integer.parseInt(br.readLine());
+//
+//        for (int test_case = 1; test_case <= T; test_case++) {
+//            int n = Integer.parseInt(br.readLine());
+//            int[] arr = new int[n];
+//            long score = 0;
+//            StringTokenizer str = new StringTokenizer(br.readLine());
+//
+//            for (int i = 0; i < n; i++) {
+//                arr[i] = Integer.parseInt(str.nextToken());
+//            }
+//            int maxPrice = 0;
+//            for (int j = n - 1; j >= 0; j--) {
+//                if (arr[j] > maxPrice)
+//                    maxPrice = arr[j];
+//                score += maxPrice - arr[j];
+//            }
+//
+//            bw.write("#" + test_case + " " + score + "\n");
+//            bw.flush();
+//        }
+//        br.close();
+//
+//    }
+//}

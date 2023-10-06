@@ -18,23 +18,23 @@
 
 import java.io.*;
 
-class Solution {
-    public static void main(String args[]) throws Exception {
-
-        int T;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        T = Integer.parseInt(br.readLine());
-
-        for (int test_case = 1; test_case <= T; test_case++) {
-            String str = new String(br.readLine());
-            StringBuffer strB = new StringBuffer(str);
-
-            if (strB.reverse().toString().equals(str))
-                System.out.println("#" + test_case + " " + 1);
-            else
-                System.out.println("#" + test_case + " " + 0);
-
-        }
-    }
-}
+//class Solution {
+//    public static void main(String args[]) throws Exception {
+//
+//        int T;
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        T = Integer.parseInt(br.readLine());
+//
+//        for (int test_case = 1; test_case <= T; test_case++) {
+//            String str = new String(br.readLine());
+//            StringBuffer strB = new StringBuffer(str);
+//
+//            if (strB.reverse().toString().equals(str))
+//                System.out.println("#" + test_case + " " + 1);
+//            else
+//                System.out.println("#" + test_case + " " + 0);
+//
+//        }
+//    }
+//}

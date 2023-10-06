@@ -23,51 +23,51 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-class Solution {
-    public static void main(String args[]) throws Exception {
-
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int T;
-        T = Integer.parseInt(br.readLine());
-
-        for (int test_case = 1; test_case <= T; test_case++) {
-            String str = br.readLine();
-            StringTokenizer st = new StringTokenizer(str);
-            int n = Integer.parseInt(st.nextToken());
-            int m = Integer.parseInt(st.nextToken());
-
-            int[][] arr = new int[n][n];
-
-            for (int i = 0; i < n; i++) { // 배열 채우기
-                String str2 = br.readLine();
-                StringTokenizer st2 = new StringTokenizer(str2);
-                for (int j = 0; j < n; j++) {
-                    arr[i][j] = Integer.parseInt(st2.nextToken());
-                }
-            }
-
-            int maxScore = 0;
-
-            for (int i = 0; i <= n - m; i++) {
-                for (int j = 0; j <= n - m; j++) {
-
-                    int score = 0; // 사각형 안 점수 측정하기
-                    for (int k = i; k <= i + m - 1; k++) {
-                        for (int s = j; s <= j + m - 1; s++) {
-                            score += arr[k][s];
-                        }
-                    }
-                    if (score > maxScore)
-                        maxScore = score;
-
-                }
-
-            }
-            System.out.printf("#%d %d", test_case, maxScore);
-            System.out.println();
-
-        }
-    }
-}
+//class Solution {
+//    public static void main(String args[]) throws Exception {
+//
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int T;
+//        T = Integer.parseInt(br.readLine());
+//
+//        for (int test_case = 1; test_case <= T; test_case++) {
+//            String str = br.readLine();
+//            StringTokenizer st = new StringTokenizer(str);
+//            int n = Integer.parseInt(st.nextToken());
+//            int m = Integer.parseInt(st.nextToken());
+//
+//            int[][] arr = new int[n][n];
+//
+//            for (int i = 0; i < n; i++) { // 배열 채우기
+//                String str2 = br.readLine();
+//                StringTokenizer st2 = new StringTokenizer(str2);
+//                for (int j = 0; j < n; j++) {
+//                    arr[i][j] = Integer.parseInt(st2.nextToken());
+//                }
+//            }
+//
+//            int maxScore = 0;
+//
+//            for (int i = 0; i <= n - m; i++) {
+//                for (int j = 0; j <= n - m; j++) {
+//
+//                    int score = 0; // 사각형 안 점수 측정하기
+//                    for (int k = i; k <= i + m - 1; k++) {
+//                        for (int s = j; s <= j + m - 1; s++) {
+//                            score += arr[k][s];
+//                        }
+//                    }
+//                    if (score > maxScore)
+//                        maxScore = score;
+//
+//                }
+//
+//            }
+//            System.out.printf("#%d %d", test_case, maxScore);
+//            System.out.println();
+//
+//        }
+//    }
+//}

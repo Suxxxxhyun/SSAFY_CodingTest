@@ -19,40 +19,40 @@
 
 import java.io.*;
 
-class Solution {
-    public static String word = "";
-
-    public static boolean checkSame(int index, String str) {
-        boolean same = true;
-        for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) != str.charAt(index + i))
-                same = false;
-        }
-        return same;
-
-    }
-
-    public static void main(String args[]) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T;
-        T = Integer.parseInt(br.readLine());
-
-        for (int test_case = 1; test_case <= T; test_case++) {
-            String sen = br.readLine();
-            word += sen.charAt(0);
-
-            for (int i = 1; i < sen.length() - 1; i++) {
-                if (sen.charAt(0) == sen.charAt(i)) {
-                    if (checkSame(i, sen)) {
-                        System.out.printf("#%d %d", test_case, word.length());
-                        System.out.println();
-                        break;
-                    }
-                }
-                word += sen.charAt(i);
-            }
-            word = "";
-
-        }
-    }
-}
+//class Solution {
+//    public static String word = "";
+//
+//    public static boolean checkSame(int index, String str) {
+//        boolean same = true;
+//        for (int i = 0; i < word.length(); i++) {
+//            if (word.charAt(i) != str.charAt(index + i))
+//                same = false;
+//        }
+//        return same;
+//
+//    }
+//
+//    public static void main(String args[]) throws Exception {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        int T;
+//        T = Integer.parseInt(br.readLine());
+//
+//        for (int test_case = 1; test_case <= T; test_case++) {
+//            String sen = br.readLine();
+//            word += sen.charAt(0);
+//
+//            for (int i = 1; i < sen.length() - 1; i++) {
+//                if (sen.charAt(0) == sen.charAt(i)) {
+//                    if (checkSame(i, sen)) {
+//                        System.out.printf("#%d %d", test_case, word.length());
+//                        System.out.println();
+//                        break;
+//                    }
+//                }
+//                word += sen.charAt(i);
+//            }
+//            word = "";
+//
+//        }
+//    }
+//}

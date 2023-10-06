@@ -21,31 +21,31 @@
 
 import java.io.*;
 
-class Solution {
-    public static void main(String args[]) throws Exception {
-
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int T;
-        T = Integer.parseInt(br.readLine());
-
-        for (int test_case = 1; test_case <= T; test_case++) {
-            int n = Integer.parseInt(br.readLine());
-
-            int sum = 0;
-
-            for (int i = 1; i <= n; i++) {
-                if (i % 2 != 0)
-                    sum += i;
-                else
-                    sum -= i;
-            }
-
-            bw.write("#" + test_case + " " + sum + "\n");
-
-        }
-        bw.close();
-        br.close();
-    }
-}
+//class Solution {
+//    public static void main(String args[]) throws Exception {
+//
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int T;
+//        T = Integer.parseInt(br.readLine());
+//
+//        for (int test_case = 1; test_case <= T; test_case++) {
+//            int n = Integer.parseInt(br.readLine());
+//
+//            int sum = 0;
+//
+//            for (int i = 1; i <= n; i++) {
+//                if (i % 2 != 0)
+//                    sum += i;
+//                else
+//                    sum -= i;
+//            }
+//
+//            bw.write("#" + test_case + " " + sum + "\n");
+//
+//        }
+//        bw.close();
+//        br.close();
+//    }
+//}

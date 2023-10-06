@@ -22,42 +22,42 @@ import java.io.*;
 
 import java.util.StringTokenizer;
 
-class Solution {
-    public static void main(String args[]) throws Exception {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int T;
-        T = Integer.parseInt(br.readLine());
-
-        for (int test_case = 1; test_case <= T; test_case++) {
-            int sum = 0;
-
-            int maxNum = 0;
-            int minNum = 1001;
-
-            String str = br.readLine();
-            StringTokenizer st = new StringTokenizer(str);
-
-            for (int i = 0; i < 10; i++) {
-                int num = Integer.parseInt(st.nextToken());
-
-                if (maxNum < num)
-                    maxNum = num;
-                else if (minNum > num)
-                    minNum = num;
-                sum += num;
-            }
-
-            double ansNum = (sum - minNum - maxNum) / 8.0;
-            String strNum = String.format("%.0f", ansNum);
-
-            System.out.print("#" + test_case + " " + strNum);
-            System.out.println();
-
-        }
-    }
-}
+//class Solution {
+//    public static void main(String args[]) throws Exception {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int T;
+//        T = Integer.parseInt(br.readLine());
+//
+//        for (int test_case = 1; test_case <= T; test_case++) {
+//            int sum = 0;
+//
+//            int maxNum = 0;
+//            int minNum = 1001;
+//
+//            String str = br.readLine();
+//            StringTokenizer st = new StringTokenizer(str);
+//
+//            for (int i = 0; i < 10; i++) {
+//                int num = Integer.parseInt(st.nextToken());
+//
+//                if (maxNum < num)
+//                    maxNum = num;
+//                else if (minNum > num)
+//                    minNum = num;
+//                sum += num;
+//            }
+//
+//            double ansNum = (sum - minNum - maxNum) / 8.0;
+//            String strNum = String.format("%.0f", ansNum);
+//
+//            System.out.print("#" + test_case + " " + strNum);
+//            System.out.println();
+//
+//        }
+//    }
+//}
 
 //// 3
 // 3 17 1 39 8 41 2 32 99 2

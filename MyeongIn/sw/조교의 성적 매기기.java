@@ -46,84 +46,84 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.util.Collections;
 
-class Solution {
-    public static void main(String args[]) throws Exception {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        int T;
-
-        T = Integer.parseInt(br.readLine());
-
-        String[] strScore = new String[] { "A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D0" };
-
-        for (int test_case = 1; test_case <= T; test_case++) {
-            String str2 = br.readLine();
-
-            StringTokenizer st2 = new StringTokenizer(str2);
-
-            int n = Integer.parseInt(st2.nextToken());
-            int k = Integer.parseInt(st2.nextToken());
-
-            int[] arr = new int[n];
-
-            for (int i = 1; i <= n; i++) {
-                String str = br.readLine();
-                StringTokenizer st = new StringTokenizer(str);
-
-                int midScore = Integer.parseInt(st.nextToken());
-                int lastScore = Integer.parseInt(st.nextToken());
-                int praScore = Integer.parseInt(st.nextToken());
-
-                int sum = (midScore * 35) + (lastScore * 45) + (praScore * 20);
-                arr[i - 1] = sum;
-            }
-
-            int kScore = arr[k - 1];
-
-            int temp = 0;
-            Arrays.sort(arr); // 오름차순 정렬
-            for (int i = n - 1; i >= 0; i--) {
-                temp++;
-                if (arr[i] == kScore) {
-                    break;
-                }
-
-            }
-            // 10 -> 1[0]
-
-            // 20 -> 1, 2[0,1]
-
-            // 30 -> 1 2 3 [0,1,2]
-
-            if (temp <= n / 10)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 2)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 3)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 4)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 5)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 6)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 7)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 8)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else if (temp <= n / 10 * 9)
-                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
-            else
-                System.out.println("#" + test_case + " " + strScore[temp / (n / 10)] + "\n");
-
-            // 20명일 때 1~2 3~4 5~6 7~8 9~10
-            // 100명일 때 1~10 11~20
-
-        }
-        bw.close();
-        br.close();
-
-    }
-}
+//class Solution {
+//    public static void main(String args[]) throws Exception {
+//
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//
+//        int T;
+//
+//        T = Integer.parseInt(br.readLine());
+//
+//        String[] strScore = new String[] { "A+", "A0", "A-", "B+", "B0", "B-", "C+", "C0", "C-", "D0" };
+//
+//        for (int test_case = 1; test_case <= T; test_case++) {
+//            String str2 = br.readLine();
+//
+//            StringTokenizer st2 = new StringTokenizer(str2);
+//
+//            int n = Integer.parseInt(st2.nextToken());
+//            int k = Integer.parseInt(st2.nextToken());
+//
+//            int[] arr = new int[n];
+//
+//            for (int i = 1; i <= n; i++) {
+//                String str = br.readLine();
+//                StringTokenizer st = new StringTokenizer(str);
+//
+//                int midScore = Integer.parseInt(st.nextToken());
+//                int lastScore = Integer.parseInt(st.nextToken());
+//                int praScore = Integer.parseInt(st.nextToken());
+//
+//                int sum = (midScore * 35) + (lastScore * 45) + (praScore * 20);
+//                arr[i - 1] = sum;
+//            }
+//
+//            int kScore = arr[k - 1];
+//
+//            int temp = 0;
+//            Arrays.sort(arr); // 오름차순 정렬
+//            for (int i = n - 1; i >= 0; i--) {
+//                temp++;
+//                if (arr[i] == kScore) {
+//                    break;
+//                }
+//
+//            }
+//            // 10 -> 1[0]
+//
+//            // 20 -> 1, 2[0,1]
+//
+//            // 30 -> 1 2 3 [0,1,2]
+//
+//            if (temp <= n / 10)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 2)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 3)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 4)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 5)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 6)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 7)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 8)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else if (temp <= n / 10 * 9)
+//                bw.write("#" + test_case + " " + strScore[(temp - 1) / (n / 10)] + "\n");
+//            else
+//                System.out.println("#" + test_case + " " + strScore[temp / (n / 10)] + "\n");
+//
+//            // 20명일 때 1~2 3~4 5~6 7~8 9~10
+//            // 100명일 때 1~10 11~20
+//
+//        }
+//        bw.close();
+//        br.close();
+//
+//    }
+//}
