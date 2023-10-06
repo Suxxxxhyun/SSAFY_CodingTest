@@ -62,7 +62,6 @@ public class Solution194602 {
                     }
                 }
                 System.out.println(sb.toString());
-                sb.delete(0,sb.length());
                 if(list.size() == 0){
                     break;
                 }
