@@ -22,29 +22,29 @@
 import java.util.Scanner;
 import java.io.*;
 
-//class Solution {
-//    public static void main(String args[]) throws Exception {
-//
-//        Scanner sc = new Scanner(System.in);
-//        int T;
-//        T = sc.nextInt();
-//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-//
-//        for (int test_case = 1; test_case <= T; test_case++) {
-//            String num = Integer.toString(test_case);
-//            int cnt = 0;
-//            if (num.contains("3") || num.contains("6") || num.contains("9")) {
-//                for (int j = 0; j < num.length(); j++) {
-//                    if (num.charAt(j) == '3' || num.charAt(j) == '6' || num.charAt(j) == '9')
-//                        bw.write("-");
-//                }
-//                bw.write(" ");
-//            }
-//
-//            else
-//                bw.write(num + " ");
-//
-//        }
-//        bw.close();
-//    }
-//}
+class Solution1926 {
+    public static void main(String args[]) throws Exception {
+
+        try (Scanner sc = new Scanner(System.in)) {
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+            int T = sc.nextInt();
+
+            for (int test_case = 1; test_case <= T; test_case++) {
+                String num = Integer.toString(test_case);
+
+                if (num.contains("3") || num.contains("6") || num.contains("9")) {
+                    for (int j = 0; j < num.length(); j++) {
+                        if (num.charAt(j) == '3' || num.charAt(j) == '6' || num.charAt(j) == '9')
+                            bw.write("-");
+                    }
+                    bw.write(" ");
+                }
+
+                else
+                    bw.write(num + " ");
+
+            }
+            bw.close();
+        }
+    }
+}
