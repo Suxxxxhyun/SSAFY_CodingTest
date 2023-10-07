@@ -19,7 +19,7 @@
 
 import java.io.*;
 
-class Solutio1989_2 {
+class Solution1989_2 {
     public static void main(String args[]) throws Exception {
 
         int T;
