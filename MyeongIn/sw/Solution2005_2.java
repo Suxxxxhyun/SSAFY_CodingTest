@@ -20,33 +20,34 @@ import java.util.Scanner;
 class Solution2005_2 {
     public static void main(String args[]) throws Exception {
 
-        Scanner sc = new Scanner(System.in);
-        int T;
-        T = sc.nextInt();
+        try (Scanner sc = new Scanner(System.in)) {
+            int T;
+            T = sc.nextInt();
 
-        for (int test_case = 1; test_case <= T; test_case++) {
-            int n = sc.nextInt();
-            int[][] arr = new int[n][n];
+            for (int test_case = 1; test_case <= T; test_case++) {
+                int n = sc.nextInt();
+                int[][] arr = new int[n][n];
 
-            for (int i = 0; i < n; i++) {
-                arr[i][0] = 1;
-                arr[i][i] = 1;
-            }
-
-            for (int j = 2; j < n; j++) {
-                for (int k = 1; k <= j - 1; k++) {
-                    arr[j][k] = arr[j - 1][k - 1] + arr[j - 1][k];
+                for (int i = 0; i < n; i++) {
+                    arr[i][0] = 1;
+                    arr[i][i] = 1;
                 }
-            }
 
-            System.out.println("#" + test_case);
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j <= i; j++) {
-                    System.out.print(arr[i][j] + " ");
+                for (int j = 2; j < n; j++) {
+                    for (int k = 1; k <= j - 1; k++) {
+                        arr[j][k] = arr[j - 1][k - 1] + arr[j - 1][k];
+                    }
                 }
-                System.out.println();
-            }
 
+                System.out.println("#" + test_case);
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j <= i; j++) {
+                        System.out.print(arr[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+
+            }
         }
     }
 }
