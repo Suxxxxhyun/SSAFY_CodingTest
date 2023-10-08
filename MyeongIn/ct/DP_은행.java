@@ -8,8 +8,8 @@
 // 유의사항 : for문의 i는 코인의 금액을 뜻 한다.
 // 유의사항 : 점화식에서, i 코인의 값보다 작은 coin배열의 값들로 빼주어야 한다. 그렇지 않으면 아웃오브 인덱스.
 
-class test {
-    public static void DP_은행(String args[]) throws Exception {
+class DP_은행 {
+    public static void main(String args[]) throws Exception {
 
         final int MAX_INT = Integer.MAX_VALUE;
 
