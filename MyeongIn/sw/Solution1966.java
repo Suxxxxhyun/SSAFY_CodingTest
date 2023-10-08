@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.io.*;
 
-class Solution {
+class Solution1966 {
     public static void main(String args[]) throws Exception {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
