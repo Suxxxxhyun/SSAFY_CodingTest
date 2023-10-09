@@ -8,36 +8,32 @@
 
 // 가장 긴 감소하는 부분수열의 길이를 구해봅시다.
 
-import java.util.Scanner;
-import java.io.FileInputStream;
+class DP_가장_긴_감소하는_부분수열 {
+	public static void main(String args[]) throws Exception {
 
-
-class DP_가장_긴_감소하는_부분수열
-{
-	public static void main(String args[]) throws Exception
-	{
-		Scanner sc = new  Scanner(System.in);
-		
-		int[] arr = new int[]{60, 65, 50, 70, 63, 55, 45, 51, 45, 48, 54, 70, 61};
+		int[] arr = new int[] { 60, 65, 50, 70, 63, 55, 45, 51, 45, 48, 54, 70, 61 };
 		int[] dp = new int[13];
-		
+
 		dp[0] = 1;
-		
-		for (int i= 1; i<dp.length; i++) {
+
+		for (int i = 1; i < dp.length; i++) {
 			int elm = arr[i];
 			int maxElm = 0;
-			for(int j = i-1; j>=0; j--) {
-				if(arr[j] > elm) {
+			for (int j = i - 1; j >= 0; j--) {
+				if (arr[j] > elm) {
 					maxElm = Math.max(maxElm, dp[j]);
 				}
 			}
-			if (maxElm == 0)  dp[i] = 1;
-			else dp[i] = maxElm+1;
-			
+			if (maxElm == 0)
+				dp[i] = 1;
+			else
+				dp[i] = maxElm + 1;
+
 		}
-		int maxNum = 0; 
-		for (int i = 0; i< dp.length; i++) {
-			if(dp[i] > maxNum) maxNum = dp[i];
+		int maxNum = 0;
+		for (int i = 0; i < dp.length; i++) {
+			if (dp[i] > maxNum)
+				maxNum = dp[i];
 		}
 		System.out.println();
 		System.out.println(maxNum);
