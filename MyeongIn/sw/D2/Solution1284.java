@@ -16,7 +16,7 @@ import java.lang.StringBuilder;
 import java.util.StringTokenizer;
 import java.io.*;
 
-class Solution {
+class Solution1284 {
     public static void main(String args[]) throws Exception {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
