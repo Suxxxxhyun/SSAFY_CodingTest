@@ -5,7 +5,7 @@ package D3;
 import java.io.*;
 import java.lang.StringBuilder;
 
-class Solution {
+class Solution17391 {
     public static void main(String args[]) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
