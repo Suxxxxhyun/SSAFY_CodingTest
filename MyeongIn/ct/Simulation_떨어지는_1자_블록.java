@@ -1,3 +1,7 @@
+
+// 변수 기본값 생각하고 지정하기
+// 함정 경우의 수 생각하기
+
 import java.util.Scanner;
 
 public class Simulation_떨어지는_1자_블록 {
