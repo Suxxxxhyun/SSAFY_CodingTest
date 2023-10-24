@@ -3,60 +3,72 @@ package saffy.GongCho.sw;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
 
 public class Solution1240 {
 
-    static int n,k;
-    static List<Integer> a;
-    //static StringBuilder sb = new StringBuilder();
+    static int n,m,t;
+    static String[] code_a = {"0001101", "0011001", "0010011", "0111101", "0100011", "0110001",
+            "0101111", "0111011", "0110111","0001011"};
 
     public static void main(String[] args) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        for(int i=1; i<=10; i++) {
-            n = Integer.parseInt(br.readLine());
-            a = new ArrayList<Integer>();
-            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        t = Integer.parseInt(br.readLine());
+        for(int i=1; i<=t; i++) {
+            String[] str = br.readLine().split(" ");
+            n = Integer.parseInt(str[0]);
+            m = Integer.parseInt(str[1]);
+            String[] map = new String[n];
             for(int j=0; j<n; j++) {
-                a.add(Integer.parseInt(st.nextToken()));
+                map[j] = br.readLine();
             }
-            k = Integer.parseInt(br.readLine());
-            String[] str = br.readLine().split("I");
 
-            for(int k=1; k<str.length; k++) {
-                String[] stk = str[k].split(" ");
-
-                int idx = Integer.parseInt(stk[1]);
-                int count = Integer.parseInt(stk[2]);
-                for(int l=3; l<3+count; l++) {
-                    int num = Integer.parseInt(stk[l]);
-//					System.out.println(num);
-                    a.add(idx++, num);
+            String code = "";
+            for(int j=0; j<n; j++) {
+                for(int k=m-1; k>=0; k--) {
+                    if(map[j].charAt(k) - '0' == 1) {
+                        code = map[j].substring(k-55, k+1);
+                        break;
+                    }
                 }
-
-//				for(int m=0; m<a.size(); m++) {
-//					//sb.append(a.get(k) + " ");
-//					System.out.print(a.get(m) + " ");
-//				}
-//				System.out.println();
             }
 
-            //sb.append("#"+i+" ");
-            System.out.print("#"+i+" ");
-            for(int k=0; k<10; k++) {
-                //sb.append(a.get(k) + " ");
-                System.out.print(a.get(k) + " ");
+            //System.out.println(code + "," + code.length());
+
+            String a = "";
+            for(int j=0; j<code.length(); j+=7) {
+                String st = code.substring(j, j+7);
+                for(int k=0; k<code_a.length; k++) {
+                    if(st.equals(code_a[k])) {
+                        a += k;
+                    }
+                }
             }
-            System.out.println();
-            //sb.append('\n');
+
+            //System.out.println(a);
+
+            int sum_1 = 0, sum_0 = 0;
+            int ans = 0;
+            for(int j=0; j<a.length(); j++) {
+                int val = a.charAt(j) - '0';
+                if(j % 2 == 0) {
+                    sum_0 +=  val;
+                } else {
+                    sum_1 += val;
+                }
+                ans += val;
+            }
+
+            int sum = sum_0 * 3 + sum_1;
+            if(sum % 10 == 0) {
+                System.out.println("#"+i+" "+ans);
+            } else {
+                System.out.println("#"+i+" "+0);
+            }
         }
-        //System.out.println(sb);
-
 
     }
 
 }
+
 
