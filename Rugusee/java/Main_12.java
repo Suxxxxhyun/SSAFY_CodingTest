@@ -1,6 +1,5 @@
 package saffy.Rugusee.java;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main_12 {
