@@ -1,7 +1,5 @@
-package saffy.Rugusee.java;
+package saffy.Rugusee.java.string;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main_06 {
