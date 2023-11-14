@@ -5,30 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// 백트래킹 (아오 헷갈려)
+// 백트래킹
 //< 풀이 접근 >
 //*. 순서 상관없고, 중복이 허용되지 않는 조합.
 //*. 조합은 O(2^n) n = 20이므로 시간복잡도는 무난히 통과!
 //1. combination (중복x, 순서x) 함수를 구현한다.
-
-/*
- * <결과> (배열 인덱스 탐색 과정)
- * 0
- * 01
- * 02
- * 023
- * 03
- * 12
- * 13
- * 23
- * 3
- */
 
 public class _2817_부분_수열의_합 {
 
     static int N,K;
     static int[] arr;
     static boolean[] visited;
+    static int[] output;
     static int result;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -42,6 +30,7 @@ public class _2817_부분_수열의_합 {
             result = 0;
 
             arr = new int[N];
+            output = new int[N];
             visited = new boolean[N];
 
             st = new StringTokenizer(br.readLine());
@@ -49,25 +38,35 @@ public class _2817_부분_수열의_합 {
                 arr[i] = Integer.parseInt(st.nextToken());
             }
 
-            dfs(0,0);
+            for(int i=1; i<=N; i++) {
+                dfs(0,0, 0,i);
+            }
 
-            System.out.printf("#%d %d",count,result);
+            System.out.printf("#%d %d\n",count,result);
             count++;
         }
     }
-    public static void dfs(int depth,int sum){
-        if(sum == K){
-            result++;
+    public static void dfs(int start ,int depth,int sum,int r){
+        if(depth == r) {
+            if (sum == K) {
+//                for(int i=0; i<depth; i++){
+//                    System.out.print(output[i]+" ");
+//                }
+//                System.out.println();
+                result++;
+            }
             return;
         }
 
         if(depth==N || sum > K){
             return;
         }
-        for(int i=depth; i<N; i++){
+
+        for(int i=start; i<N; i++){
             if(!visited[i]){
                 visited[i] = true;
-                dfs(i+1, sum+arr[i]);
+//                output[depth] = arr[i];
+                dfs(i,depth+1, sum+arr[i],r);
                 visited[i] = false;
             }
         }
