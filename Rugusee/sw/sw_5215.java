@@ -48,7 +48,7 @@ public class sw_5215 {
 
         // 이 재료를 사용할 때
         selectMaterial(index + 1, score + material[index][0], cal + material[index][1]);
-        // 이 재료를 사용안할 때
+        // 이 재료를 사용 안할 때
         selectMaterial(index + 1, score, cal);
 
     }
