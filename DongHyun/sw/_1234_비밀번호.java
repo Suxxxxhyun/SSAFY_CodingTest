@@ -1,6 +1,7 @@
 package saffy.DongHyun.sw;
 
-//19분
+// 19분 -> while
+// 6분 -> deque
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,6 +34,42 @@ public class _1234_비밀번호 {
     }
 }
 
+//방법 2 (Deque) : 6분
+//public static void main(String[] args) throws IOException {
+//    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//    int T = 10;
+//    int count = 1;
+//    while(count<=T){
+//        Deque<Character> deq = new LinkedList<>();
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        int N = Integer.parseInt(st.nextToken());
+//        String str = st.nextToken();
+//
+//        deq.add(str.charAt(0));
+//        for(int i=1; i<N; i++){
+//            if(deq.isEmpty()){
+//                deq.add(str.charAt(i));
+//                continue;
+//            }
+//            if(deq.peekLast() == str.charAt(i)){
+//                deq.pollLast();
+//                continue;
+//            }
+//            deq.add(str.charAt(i));
+//        }
+//
+//        String result = "";
+//        while(!deq.isEmpty()){
+//            result += deq.poll();
+//        }
+//        System.out.printf("#%d %s",count,result);
+//        System.out.println();
+//        count++;
+//    }
+//}
+
+
+//방법 3 (while문)
 //    public static void main(String[] args) throws IOException {
 //        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
 //        int T = 10;
